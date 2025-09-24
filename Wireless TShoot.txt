@@ -1,0 +1,3 @@
+Force Join AP
+!@AP
+capwap ap primary-base WLC_CA 10.92.1.7 
