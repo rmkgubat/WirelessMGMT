@@ -179,3 +179,16 @@ conf t
 &nbsp;
 ---
 &nbsp;
+
+### 8. Login to the GUI
+
+> Username: admin  
+> Password: pass  
+
+<br>
+
+![08](img/08.JPG)
+
+&nbsp;
+---
+&nbsp;
