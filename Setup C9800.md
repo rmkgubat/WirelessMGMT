@@ -7,7 +7,7 @@ IP Addresses:
 ---
 &nbsp;
 
-Setup for L3 Switch
+Setup L3 Switch
 
 ~~~
 !@CSwitch
@@ -61,6 +61,14 @@ conf t
   dns-server 10.92.1.10
   domain-name WIFI.COM 
   option 43 ip 10.92.1.7
-  !option 42 ip 10.92.1.7
   end
 ~~~
+
+<br>
+<br>
+
+---
+&nbsp;
+
+Setup C9800-Cloud
+
