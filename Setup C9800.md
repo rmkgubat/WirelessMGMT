@@ -38,6 +38,10 @@ conf t
   no shut
  !
  !
+ int fa0/1
+  switchport trunk encaps dot1q
+  switchport mode trunk
+  switchport trunk allowed vlan all
  int range fa0/2,fa0/4
   switchport mode access
   switchport access vlan 10
@@ -148,9 +152,8 @@ conf t
   ip add dhcp
  int g2
   switchport
-  switchport trunk encaps dot1q
   switchport mode trunk
-  switchport trunk allowed vlan 1
+  switchport trunk allowed vlan 1-1000
  !
  !
  ip route 10.0.0.0 255.0.0.0 10.92.1.4
