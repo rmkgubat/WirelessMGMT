@@ -73,7 +73,7 @@ conf t
 
 1. Open the VM: C9800-CL-universalk9_vga.17.15.03.ovf
 
-[!01](img/01.JPG)
+![01](img/01.JPG)
 
 &nbsp;
 ---
@@ -81,10 +81,16 @@ conf t
 
 2. Set the Name
 
-[!02](img/02.JPG)
+![02](img/02.JPG)
 
 &nbsp;
 ---
 &nbsp;
 
 3. Specify deployment size
+
+![03](img/03.JPG)
+
+&nbsp;
+---
+&nbsp;
