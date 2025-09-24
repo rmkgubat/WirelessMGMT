@@ -3,11 +3,10 @@ IP Addresses:
  C9800-CL = 10.92.1.7
  Azure-CL = 10.92.1.8
  
-&nbsp;
----
-&nbsp;
+<br>
+<br>
 
-Setup L3 Switch
+### Setup L3 Switch
 
 ~~~
 !@CSwitch
@@ -70,5 +69,22 @@ conf t
 ---
 &nbsp;
 
-Setup C9800-Cloud
+### Setup C9800-Cloud
 
+1. Open the VM: C9800-CL-universalk9_vga.17.15.03.ovf
+
+[!01](img/01.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+2. Set the Name
+
+[!02](img/02.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+3. Specify deployment size
