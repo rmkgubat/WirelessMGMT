@@ -6,7 +6,7 @@ IP Addresses:
 <br>
 <br>
 
-### Setup L3 Switch
+## Setup L3 Switch
 
 ~~~
 !@CSwitch
@@ -69,9 +69,9 @@ conf t
 ---
 &nbsp;
 
-### Setup C9800-Cloud
+## Setup C9800-Cloud
 
-1. Open the VM: C9800-CL-universalk9_vga.17.15.03.ovf
+### 1. Open the VM: C9800-CL-universalk9_vga.17.15.03.ovf
 
 ![01](img/01.JPG)
 
@@ -79,7 +79,7 @@ conf t
 ---
 &nbsp;
 
-2. Set the Name
+### 2. Set the Name
 
 ![02](img/02.JPG)
 
@@ -87,9 +87,94 @@ conf t
 ---
 &nbsp;
 
-3. Specify deployment size
+### 3. Specify deployment size to the minimum __100 APs, 1k Clients__ 
 
 ![03](img/03.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 4. Leave everything as default and simply __Import__
+
+![04](img/04.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 5. Set the Network Adapters to the following:
+| Network Adapter | Connection              |
+| ---             | ---                     |
+| Network Adapter | __NAT__                 |
+| NetAdapter 2    | __Bridged (Replicate)__ |
+| NetAdapter 3    | __VMNet3__              |
+
+<br>
+
+![05](img/05.JPG)
+
+<br>
+<br>
+
+Confirm the changes by selecting __Ok__, then __Run__ the Virtual Machine
+
+&nbsp;
+---
+&nbsp;
+
+### 6. Configure the C9800
+
+~~~
+conf t
+ hostname C9800-WLC
+ enable secret pass
+ service password-encryption
+ no logging cons
+ no ip domain lookup
+ line vty 0 48
+  login local
+  transport input all
+  exec-timeout 0 0
+  exit
+ username admin privilege 15 secret C1sc0123
+ !
+ !
+ int vlan 1
+  ip add 10.92.1.7 255.255.255.0
+  no shut
+ int g1
+  no switchport
+  ip add dhcp
+ int g2
+  switchport
+  switchport trunk encaps dot1q
+  switchport mode trunk
+  switchport trunk allowed vlan 1
+ !
+ !
+ ip route 10.0.0.0 255.0.0.0 10.92.1.4
+ ip route 200.0.0.0 255.255.255.0 10.92.1.4
+ !
+ !
+ ntp server 216.239.35.12
+ ntp master 4
+ ntp source vlan1
+ end
+~~~
+
+<br>
+<br>
+
+![06](img/06.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 7. Access the GUI of C9800 by using the IP on its GigabitEthernet 1 interface (ex. https://208.8.8.210/)
+
+![07](img/07.JPG)
 
 &nbsp;
 ---
