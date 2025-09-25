@@ -1,6 +1,6 @@
 
-IP Addresses:
- C9800-CL = 10.92.1.12
+IP Addresses:  
+ C9800-CL = 10.92.1.12  
  WinServer22 (RADIUS) = 10.92.1.8
  
 <br>
