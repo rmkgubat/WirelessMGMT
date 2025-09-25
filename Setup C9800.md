@@ -41,7 +41,7 @@ conf t
  int fa0/1
   switchport trunk encaps dot1q
   switchport mode trunk
-  switchport trunk allowed vlan 1,10
+  switchport trunk allowed vlan all
   switchport trunk native vlan 1
  int range fa0/2,fa0/4
   switchport mode access
@@ -157,8 +157,9 @@ conf t
   ip add dhcp
  int g2
   switchport
-  switchport mode acc
-  switchport access vlan 1
+  switchport trunk allowed vlan all
+  switchport trunk native vlan 1
+  switchport mode trunk
  !
  !
  ip route 10.0.0.0 255.0.0.0 10.92.1.4
