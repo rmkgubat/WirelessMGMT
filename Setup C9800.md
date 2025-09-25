@@ -1,7 +1,7 @@
 
 IP Addresses:
- C9800-CL = 10.92.1.7
- Azure-CL = 10.92.1.8
+ C9800-CL = 10.92.1.12
+ WinServer22 (RADIUS) = 10.92.1.8
  
 <br>
 <br>
@@ -41,7 +41,8 @@ conf t
  int fa0/1
   switchport trunk encaps dot1q
   switchport mode trunk
-  switchport trunk allowed vlan all
+  switchport trunk allowed vlan 1,10
+  switchport trunk native vlan 1
  int range fa0/2,fa0/4
   switchport mode access
   switchport access vlan 10
@@ -53,17 +54,17 @@ conf t
  !
  ip dhcp excluded-address 10.92.1.1 10.92.1.100
  ip dhcp excluded-address 10.92.10.1 10.92.10.100
- ip dhcp pool MGMTPOOL
+ ip dhcp pool POOLDATA
   network 10.92.1.0 255.255.255.0
   default-router 10.92.1.4 255.255.255.0
   dns-server 10.92.1.10
-  domain-name MGMT.COM
- ip dhcp pool WIFIPOOL
+  domain-name MGMTDATA.COM
+ ip dhcp pool POOLWIFI
   network 10.92.10.0 255.255.255.0
   default-router 10.92.10.4 255.255.255.0
   dns-server 10.92.1.10
-  domain-name WIFI.COM 
-  option 43 ip 10.92.1.7
+  domain-name WIFIDATA.COM 
+  option 43 ip 10.92.1.12
   end
 ~~~
 
