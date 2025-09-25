@@ -1,6 +1,6 @@
 
 IP Addresses:  
- C9800-CL = 10.92.1.12  
+ C9800-CL = 10.92.1.7
  WinServer22 (RADIUS) = 10.92.1.8
  
 <br>
@@ -43,9 +43,11 @@ conf t
   switchport mode trunk
   switchport trunk allowed vlan all
   switchport trunk native vlan 1
- int range fa0/2,fa0/4
-  switchport mode access
-  switchport access vlan 10
+ int range fa0/2
+  switchport trunk encapsulation dot1q 
+  switchport trunk native vlan 1
+  switchport trunk allowed vlan all
+  switchport mode trunk
   exit
  !
  !
@@ -269,8 +271,9 @@ Then Apply
 ~~~
 conf t
  int g2
-  switchport mode access
-  switchport access vlan 1
+  switchport trunk native vlan 1
+  switchport trunk allowed vlan all
+  switchport mode trunk
   end
 ~~~
 
