@@ -153,7 +153,7 @@ conf t
  int g2
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 1-1000
+  switchport trunk allowed vlan all
  !
  !
  ip route 10.0.0.0 255.0.0.0 10.92.1.4
