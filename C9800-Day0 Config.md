@@ -1,7 +1,6 @@
 
 IP Addresses:  
  C9800-CL = 10.92.1.7
- WinServer22 (RADIUS) = 10.92.1.8
  
 <br>
 <br>
@@ -25,6 +24,12 @@ conf t
   password pass
   login
   exec-timeout 0 0
+ !
+ !
+ vtp mode server
+ vtp domain rivan
+ vtp version 2
+ vtp password C1sc0123
  !
  !
  vlan 10
@@ -147,6 +152,12 @@ conf t
  username admin privilege 15 secret C1sc0123
  !
  !
+ vtp mode server
+ vtp version 2
+ vtp domain rivan
+ vtp password C1sc0123
+ !
+ !
  vlan 10
   name WIFIVLAN
   exit
@@ -156,7 +167,8 @@ conf t
   no shut
  int g1
   no switchport
-  ip add dhcp
+  ip add 208.8.8.7 255.255.255.0
+  no shut
  int g2
   switchport
   switchport trunk allowed vlan all
@@ -164,6 +176,7 @@ conf t
   switchport mode trunk
  !
  !
+ ip route 0.0.0.0 0.0.0.0 208.8.8.2
  ip route 10.0.0.0 255.0.0.0 10.92.1.4
  ip route 200.0.0.0 255.255.255.0 10.92.1.4
  !
