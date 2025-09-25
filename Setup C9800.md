@@ -64,7 +64,7 @@ conf t
   default-router 10.92.10.4 255.255.255.0
   dns-server 10.92.1.10
   domain-name WIFIDATA.COM 
-  option 43 ip 10.92.1.12
+  option 43 ip 10.92.1.7
   end
 ~~~
 
@@ -149,7 +149,8 @@ conf t
   name WIFIVLAN
   exit
  int vlan 1
-  ip add 10.92.1.12 255.255.255.0
+  ip helper-address 10.92.1.4
+  ip add 10.92.1.7 255.255.255.0
   no shut
  int g1
   no switchport
