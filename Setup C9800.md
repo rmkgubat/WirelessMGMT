@@ -156,9 +156,8 @@ conf t
   ip add dhcp
  int g2
   switchport
-  switchport mode trunk
-  switchport trunk allowed vlan 10
-  switchport trunk native vlan 1
+  switchport mode acc
+  switchport access vlan 1
  !
  !
  ip route 10.0.0.0 255.0.0.0 10.92.1.4
@@ -259,6 +258,19 @@ Then __Next__
 Then Apply
 
 ![15](img/15.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 13. Redefine C9800 ports to access on G2
+~~~
+conf t
+ int g2
+  switchport mode access
+  switchport access vlan 1
+  end
+~~~
 
 &nbsp;
 ---
