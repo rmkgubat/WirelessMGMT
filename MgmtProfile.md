@@ -49,3 +49,6 @@ conf t
   dns-server 10.92.1.10
   end
 ~~~
+
+### Exercise 03: Modify SOC-TEAM Wifi for Port-Based Authentication (802.1x)
+
