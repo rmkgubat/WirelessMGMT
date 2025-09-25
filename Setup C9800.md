@@ -259,5 +259,12 @@ Then Apply
 ---
 &nbsp;
 
+### 12. Associate self-signed certificate for vwlc-ssc
 
+~~~
+conf t
+ wireless management interface vlan 1       
+ end
+wireless config vwlc-ssc key-size 2048 signature-algo sha256 password 0 C1sc0123
+~~~
 
