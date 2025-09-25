@@ -28,7 +28,7 @@ conf t
  !
  !
  vlan 10
-  name WIRELESS
+  name WIFIVLAN
   exit
  int vlan 1
   ip add 10.92.1.4 255.255.255.0
@@ -145,8 +145,11 @@ conf t
  username admin privilege 15 secret C1sc0123
  !
  !
+ vlan 10
+  name WIFIVLAN
+  exit
  int vlan 1
-  ip add 10.92.1.7 255.255.255.0
+  ip add 10.92.1.12 255.255.255.0
   no shut
  int g1
   no switchport
@@ -154,7 +157,8 @@ conf t
  int g2
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan all
+  switchport trunk allowed vlan 10
+  switchport trunk native vlan 1
  !
  !
  ip route 10.0.0.0 255.0.0.0 10.92.1.4
