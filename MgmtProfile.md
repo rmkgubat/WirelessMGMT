@@ -51,4 +51,40 @@ conf t
 ~~~
 
 ### Exercise 03: Modify SOC-TEAM Wifi for Port-Based Authentication (802.1x)
+Prerequisites  
+- Windows Server 2022 VM  
+  - Static IP addressing  
+    - IP: 10.#$34T#.1.8  
+	- Mask: 255.255.255.0  
+	- Gateway: None  
+	- DNS: 127.0.0.1  
+  - DNS Suffix  
+    - Suffix: rivanm.com  
 
+- Disabled Firewall  
+- Rename Computer  
+
+Restart the Computer to Apply changes  
+
+<br>
+---
+<br>
+
+### Install the necessary roles and features
+1. Active Directory Domains and Services 
+  - Promote this server to a domain controller. 
+    - Add a new forest: This MUST be your DNS suffix: rivanm.com 
+	 - Add a DSRM password: C1sc0123 
+	 - Do NOT create DNS delegation 
+	 - Allow NetBIOs to resolve the name 
+	 - Leave Paths as default 
+	
+	 - Install
+
+<br>
+
+2. Network Policy Server
+
+<br>
+
+3. Active Directory Certificate Authority
