@@ -165,7 +165,6 @@ conf t
   name WIFIVLAN
   exit
  int vlan 1
-  ip helper-address 10.#$34T#.1.4
   ip add 10.#$34T#.1.7 255.255.255.0
   no shut
  int g1
