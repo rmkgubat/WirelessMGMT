@@ -375,6 +375,12 @@ conf t
   end
 ~~~
 
+<br>
+<br>
+
+---
+&nbsp;
+
 ### Exercise 04: Modify `SOC-TEAM` Wifi for `Port-Based Authentication (802.1x)`
 Prerequisites  
 - Windows Server 2022 VM  
@@ -391,9 +397,9 @@ Prerequisites
 
 Restart the Computer to Apply changes  
 
-<br>
+&nbsp;
 ---
-<br>
+&nbsp;
 
 ### Install the necessary roles and features
 1. Active Directory Domains and Services 
