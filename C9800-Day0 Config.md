@@ -2,18 +2,21 @@
 <!---   Your Monitor Number = #$34T#   --->  
 
 
-IP Addresses:  
- C9800-CL = 10.#$34T#.1.7
- 
+> IP Addresses:  
+> C9800-CL = 10.#$34T#.1.7
+
+| Device   | Port  |
+| ---      | ---   |
+| 1815w AP | fa0/2 |
+
 <br>
 <br>
 
-## Setup L3 Switch
-
+## Setup L3 Switch (CoreBABA) with necessary cofnfigurations.
 ~~~
 !@CSwitch
 conf t
- hostname CSwitch-#$34T#
+ hostname CoreBABA-#$34T#
  enable secret pass
  service password-encryption
  no logging console
@@ -84,9 +87,9 @@ conf t
 ---
 &nbsp;
 
-## Setup C9800-Cloud
+## Deploy C9800-Cloud.
 
-### 1. Open the VM: C9800-CL-universalk9_vga.17.15.03.ovf
+### 1. Open the VM: `C9800-CL-universalk9_vga.17.15.03.ovf`
 
 ![01](img/01.JPG)
 
@@ -94,7 +97,7 @@ conf t
 ---
 &nbsp;
 
-### 2. Set the Name
+### 2. Assign a name.
 
 ![02](img/02.JPG)
 
@@ -102,7 +105,7 @@ conf t
 ---
 &nbsp;
 
-### 3. Specify deployment size to the minimum __100 APs, 1k Clients__ 
+### 3. Specify deployment size to the `MINIMUM` __100 APs, 1k Clients__ 
 
 ![03](img/03.JPG)
 
@@ -119,11 +122,11 @@ conf t
 &nbsp;
 
 ### 5. Set the Network Adapters to the following:
-| Network Adapter | Connection              |
-| ---             | ---                     |
-| Network Adapter | __NAT__                 |
-| NetAdapter 2    | __Bridged (Replicate)__ |
-| NetAdapter 3    | __VMNet3__              |
+| Network Adapter | Connection              | Network           |
+| ---             | ---                     | ---               |
+| Network Adapter | __NAT__                 | 208.8.8.0 /24     |
+| NetAdapter 2    | __Bridged (Replicate)__ | 10.#$34T#.1.0 /24 |
+| NetAdapter 3    | __VMNet3__              | 192.168.103.0 /24 |
 
 <br>
 
@@ -139,7 +142,6 @@ Confirm the changes by selecting __Ok__, then __Run__ the Virtual Machine
 &nbsp;
 
 ### 6. Configure the C9800
-
 ~~~
 conf t
  hostname C9800-WLC
@@ -198,7 +200,10 @@ conf t
 ---
 &nbsp;
 
-### 7. Access the GUI of C9800 by using the IP on its GigabitEthernet 1 interface (ex. https://208.8.8.210/)
+### 7. Access the GUI of C9800 by using the IP on its GigabitEthernet 1 interface https://208.8.8.7/ 
+
+> [!NOTE]  
+> In the diagram it is 208.8.8.210, simply replace it with 208.8.8.7
 
 ![07](img/07.JPG)
 
@@ -233,7 +238,7 @@ Make sure the Country is __US__, and the NTP server is the IP of __time.google.c
 
 For __Wireless Management Settings__, set the management Port Number to __GigabitEthernet2__, which is where we Bridged the connection to the real switch.
 
-<br.
+<br>
 
 Set the __Wireless Management VLAN__ to __1__
 
