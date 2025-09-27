@@ -83,7 +83,7 @@ conf t
   domain-name MGMTDATA.COM
  ip dhcp pool POOLWIFI
   network 10.#$34T#.10.0 255.255.255.0
-  default-router 10.#$34T#.10.4 255.255.255.0
+  default-router 10.#$34T#.10.4
   dns-server 10.#$34T#.1.10
   domain-name WIFIDATA.COM 
   option 43 ip 10.#$34T#.1.7
