@@ -318,11 +318,93 @@ wireless config vwlc-ssc key-size 2048 signature-algo sha256 password 0 C1sc0123
 
 <br>
 <br>
+<br>
+<br>
+
+### Once the AP has been connected, it will automatically join the WLC.  
+
+<br>
+
+![wlan01](img/wlan01.JPG)
+
+
+<br>
+<br>
 
 ---
 &nbsp;
 
-### Exercise 01: Troubleshoot `Wireless-92` wifi so that it becomes operable in the network.
+## Exercise 01: Troubleshoot `Wireless-#$34T#` wifi so that it becomes operable in the network.
+
+### 1. Go to `Configuration` > Under Wireless Setup, select `Advanced`
+![wlan02](img/wlan02.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 2. View the Wireless Setup Flow Overview then, when ready, select `Start Now`
+![wlan03](img/wlan03.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 3. Under the pipeline, Tags & Profiles, select the List View of `WLAN Profile`
+![wlan04](img/wlan04.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 4. Select the existing WLAN, `Wireless-91`
+![wlan05](img/wlan05.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 5. Make sure `6GHz is disabled` then select `Security`
+![wlan06](img/wlan06.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 6. Set the Auth Key Mgmt (AKM) to `PSK` and `PSK-SHA256` with a Pre-Shared Key `C1sc0123`. Then `Update & Apply to Device`
+![wlan07](img/wlan07.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 7. Now select the List View for Policy Profile. Then `Add` a policy.
+![wlan08](img/wlan08.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 8. `Enable` the status of the policy, then add the following Name & Description `Wireless-POL`. Then select `Access Policies`.
+![wlan09](img/wlan09.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 9. Under `Access Policies`, set the VLAN for the clients joining the WLAN to VLAN 10, `WIFIVLAN`. Then select `Advanced`.
+![wlan10](img/wlan10.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 10. Assign the DHCP server for the WLAN, `10.#$34T#.10.4`
+![wlan11](img/wlan11.JPG)
+
+&nbsp;
+---
+&nbsp;
 
 
 ### Exercise 02: Create WLANs for `SOC-TEAM` on VLAN 11. Verify by connecting on mobile and checking if you got the correct IP from the DHCP Server.
