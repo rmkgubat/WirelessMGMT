@@ -205,9 +205,6 @@ conf t
 
 ### 7. Access the GUI of C9800 by using the IP on its GigabitEthernet 1 interface https://208.8.8.7/ 
 
-> [!NOTE]  
-> In the diagram it is 208.8.8.210, simply replace it with 208.8.8.7
-
 ![07](img/07.JPG)
 
 &nbsp;
