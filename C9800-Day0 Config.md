@@ -44,6 +44,12 @@ conf t
  vlan 10
   name WIFIVLAN
   exit
+ vlan 50
+  name CCTVVLAN
+  exit
+ vlan 100
+  name VOIPVLAN
+  exit
  int vlan 1
   ip add 10.#$34T#.1.4 255.255.255.0
   no shut
