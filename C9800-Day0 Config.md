@@ -78,7 +78,7 @@ conf t
  ip dhcp excluded-address 10.#$34T#.10.1 10.#$34T#.10.100
  ip dhcp pool POOLDATA
   network 10.#$34T#.1.0 255.255.255.0
-  default-router 10.#$34T#.1.4 255.255.255.0
+  default-router 10.#$34T#.1.4
   dns-server 10.#$34T#.1.10
   domain-name MGMTDATA.COM
  ip dhcp pool POOLWIFI
