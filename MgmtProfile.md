@@ -17,7 +17,7 @@ conf t
  ip dhcp excluded-address 10.#$34T#.11.1 10.#$34T#.11.100
  ip dhcp pool SOCPOOL
   network 10.#$34T#.11.0 255.255.255.0
-  default-router 10.#$34T#.11.4 255.255.255.0
+  default-router 10.#$34T#.11.4
   domain-name SOC-TEAM.COM
   dns-server 10.#$34T#.1.10
   end
@@ -44,7 +44,7 @@ conf t
  ip dhcp excluded-address 10.#$34T#.12.1 10.#$34T#.12.100
  ip dhcp pool THUNTPOOL
   network 10.#$34T#.12.0 255.255.255.0
-  default-router 10.#$34T#.12.4 255.255.255.0
+  default-router 10.#$34T#.12.4
   domain-name THUNT.COM
   dns-server 10.#$34T#.1.10
   end
