@@ -399,12 +399,101 @@ wireless config vwlc-ssc key-size 2048 signature-algo sha256 password 0 C1sc0123
 ---
 &nbsp;
 
-### 10. Assign the DHCP server for the WLAN, `10.#$34T#.10.4`
+### 10. Assign the DHCP server for the WLAN, `10.#$34T#.10.4`, finally `Apply to Device`.
 ![wlan11](img/wlan11.JPG)
 
 &nbsp;
 ---
 &nbsp;
+
+### 11. Confirm the changes and make sure Wireless-POL is now listed. Next, select the List View for `Policy Tag`
+![wlan12](img/wlan12.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 12. `Add` a policy tag.
+![wlan13](img/wlan13.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 13. Set the Name and Description to `AP-WLANs`. Then, under WLAN-POLICY Maps, `Add` a mapping and set the WLAN Profile to `Wireless-#$34T#` with a Policy Profile `Wireless-POL`. Then, `Apply to Device`.
+![wlan14](img/wlan14.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 14. Confirm the changes and make sure AP-WLANs is now listed. Next, select the List View for `Flex Profile`
+![wlan15](img/wlan15.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 15. `Add` a flex profile.
+![wlan17](img/wlan17.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 16. Set the Name and Description to `AP-Configs`. Then, select the VLAN tab.
+![wlan18](img/wlan18.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 17. `Add` a VLAN, specifically `WIFIVLAN` with the same VLAN ID `10`. Then, `Save`.
+![wlan19](img/wlan19.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 18. Then, `Apply to Device`.
+![wlan20](img/wlan20.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 19. Confirm the changes and make sure AP-Configs is now listed. Next, select the List View for `Site Tag`
+![wlan21](img/wlan21.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 20. `Add` a site tag
+![wlan22](img/wlan22.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 21. Set the Name and Description to `AP-Profiles`. Then, set the Flex Profile to `AP-Configs`. Finally, `Apply to Device`.
+![wlan23](img/wlan23.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 22. Confirm the changes and make sure AP-Profiles is now listed. Next, select the List View for `Tag APs`
+![wlan24](img/wlan24.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 23. Confirm the changes and make sure AP-Profiles is now listed. Next, select the List View for `Tag APs`
+![wlan24](img/wlan24.JPG)
+
+
 
 
 ### Exercise 02: Create WLANs for `SOC-TEAM` on VLAN 11. Verify by connecting on mobile and checking if you got the correct IP from the DHCP Server.
