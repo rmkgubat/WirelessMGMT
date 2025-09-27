@@ -490,8 +490,22 @@ wireless config vwlc-ssc key-size 2048 signature-algo sha256 password 0 C1sc0123
 ---
 &nbsp;
 
-### 23. Confirm the changes and make sure AP-Profiles is now listed. Next, select the List View for `Tag APs`
-![wlan24](img/wlan24.JPG)
+### 23. Select the desired AP to be configured, then select `+Tag APs`
+![wlan25](img/wlan25.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 24. Assign the Policy with `AP-WLANs`, Site to `AP-Profiles`, RF to `default-rf-tag`
+![wlan26](img/wlan26.JPG)
+
+&nbsp;
+---
+&nbsp;
+
+### 25. Confirm the setup by making sure that Results is a `Success`
+![wlan27](img/wlan27.JPG)
 
 
 
