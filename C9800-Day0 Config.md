@@ -4,6 +4,7 @@
 
 > IP Addresses:  
 > C9800-CL = 10.#$34T#.1.7
+> WinServer = 10.#$34T#.1.8
 
 <br>
 <br>
@@ -58,16 +59,11 @@ conf t
   no shut
  !
  !
- int fa0/1
+ int range fa0/1-2
   switchport trunk encaps dot1q
   switchport mode trunk
-  switchport trunk allowed vlan all
-  switchport trunk native vlan 1
- int range fa0/2
-  switchport trunk encapsulation dot1q 
   switchport trunk native vlan 1
   switchport trunk allowed vlan all
-  switchport mode trunk
   exit
  !
  !
@@ -84,7 +80,7 @@ conf t
  ip dhcp pool POOLWIFI
   network 10.#$34T#.10.0 255.255.255.0
   default-router 10.#$34T#.10.4
-  dns-server 10.#$34T#.1.10
+  dns-server 10.#$34T#.1.8
   domain-name WIFIDATA.COM 
   option 43 ip 10.#$34T#.1.7
   end
@@ -98,39 +94,56 @@ conf t
 
 ## Deploy C9800-Cloud.
 
-### 1. Open the VM: `C9800-CL-universalk9_vga.17.15.03.ovf`
+### 1. Deploy the Wireless Controller.
+Open the VM `C9800-CL-universalk9_vga.17.15.03.ovf` __[01]__
 
-![01](img/01.JPG)
-
-&nbsp;
----
-&nbsp;
-
-### 2. Assign a name.
-
-![02](img/02.JPG)
+![01](img/01.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 3. Specify deployment size to the `MINIMUM` __100 APs, 1k Clients__ 
+### 2. Assign a name for the VM
+In this guide, we use `C9800_WLC` __[02]__  
+Then, click `Next` __[03]__
 
-![03](img/03.JPG)
-
-&nbsp;
----
-&nbsp;
-
-### 4. Leave everything as default and simply __Import__
-
-![04](img/04.JPG)
+![02](img/02.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 5. Set the Network Adapters to the following:
+### 3. Deployment Options
+Specify the deployment size to `100 APs, 1k Clients` __[04]__  
+Then, click `Next` __[05]__
+
+![03](img/03.png)
+
+&nbsp;
+---
+&nbsp;
+
+### 4. Properties
+Leave everything as default and simply `Import` __[06]__
+
+![04](img/04.png)
+
+&nbsp;
+---
+&nbsp;
+
+### 5. Network Adapters
+While the VM is running, __double-click__ on either of the `three LANCards` __[07]__
+
+![05](img/05.png)
+
+&nbsp;
+---
+&nbsp;
+
+### 6. Set the Network Adapters to the following:
+
+__[08]__
 | Network Adapter | Connection              | Network           |
 | ---             | ---                     | ---               |
 | Network Adapter | __NAT__                 | 208.8.8.0 /24     |
@@ -139,12 +152,17 @@ conf t
 
 <br>
 
-![05](img/05.JPG)
+> [!IMPORTANT]
+> Make sure the Bridged Connection on Network Adapter 2 is also set to `Replicate physical network connection state` __[09]__
+
+<br>
+
+![06](img/06.png)
 
 <br>
 <br>
 
-Confirm the changes by selecting __Ok__, then __Run__ the Virtual Machine
+Confirm the changes by selecting __Ok__, then __Power On__ the Virtual Machine.
 
 &nbsp;
 ---
