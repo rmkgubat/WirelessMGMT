@@ -269,7 +269,7 @@ Then, Scroll Down to Wireless Management Settings __[19]__
 
 <br>
 
-![010](img/010.png)
+![10](img/10.png)
 
 <br>
 
