@@ -715,17 +715,20 @@ Finally, `Apply to Device` __[51]__
 
 <br>
 
-![wlan26](img/wlan26.JPG)
+![wlan25](img/wlan25.png)
 
 &nbsp;
 ---
 &nbsp;
 
 ### 25. Confirm the setup by making sure that Results is a `Success`
-![wlan27](img/wlan27.JPG)
+![wlan26](img/wlan26.png)
 
+<br>
+<br>
 
-
+---
+&nbsp;
 
 ### Exercise 02: Create WLANs for `SOC-TEAM` on VLAN 11. Verify by connecting on mobile and checking if you got the correct IP from the DHCP Server.
 NETWORK ADDRESS: 10.#$34T#.11.0/24
