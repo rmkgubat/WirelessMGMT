@@ -446,8 +446,9 @@ Select the List View icon of `WLAN Profile` __[04]__
 
 ![wlan04](img/wlan04.png)
 
-<br>
-<br>
+&nbsp;
+---
+&nbsp;
 
 Click on the existing WLAN, `wireless-#$34T#` __[05]__
 
@@ -455,8 +456,9 @@ Click on the existing WLAN, `wireless-#$34T#` __[05]__
 
 ![wlan05](img/wlan05.png)
 
-<br>
-<br>
+&nbsp;
+---
+&nbsp;
 
 Make sure `6GHz is disabled` __[06]__ then select `Security` __[07]__  
 
@@ -464,8 +466,9 @@ Make sure `6GHz is disabled` __[06]__ then select `Security` __[07]__
 
 ![wlan06](img/wlan06.png)
 
-<br>
-<br>
+&nbsp;
+---
+&nbsp;
 
 Set the Auth Key Mgmt (AKM) to `PSK` and `PSK-SHA256` __[08]__  
 with a Pre-Shared Key `C1sc0123`
@@ -478,8 +481,9 @@ Then `Update & Apply to Device` __[09]__
 
 ![wlan07](img/wlan07.png)
 
-<br>
-<br>
+&nbsp;
+---
+&nbsp;
 
 Now select the List View for `Policy Profile` __[10]__
 
@@ -491,8 +495,9 @@ Then `+ Add` a policy __[11]__
 
 ![wlan08](img/wlan08.png)
 
-<br>
-<br>
+&nbsp;
+---
+&nbsp;
 
 Set the Name* __[12]__ and Description __[13]__ to `wireless-pol`  
 then, `Enable` the status of the policy __[14]__  
@@ -505,8 +510,9 @@ Then, select `Access Policies` __[15]__
 
 ![wlan09](img/wlan09.png)
 
-<br>
-<br>
+&nbsp;
+---
+&nbsp;
 
 Under Access Policies, set the VLAN/VLAN Group __[16]__ for the clients to VLAN 10, `WIFIVLAN` __[17]__  
 
@@ -522,29 +528,51 @@ Then select `Advanced` __[18]__
 ---
 &nbsp;
 
-### 10. Assign the DHCP server for the WLAN, `10.#$34T#.10.4`, finally `Apply to Device`.
-![wlan11](img/wlan11.JPG)
+Assign the DHCP server for the WLAN, `10.#$34T#.10.4` __[19]__
+finally `Apply to Device` __[20]__
+
+<br>
+
+![wlan11](img/wlan11.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 11. Confirm the changes and make sure Wireless-POL is now listed. Next, select the List View for `Policy Tag`
-![wlan12](img/wlan12.JPG)
+Confirm the changes and make sure wireless-pol is now listed. 
+Next, select the List View icon for `Policy Tag` __[21]__
+
+<br>
+
+![wlan12](img/wlan12.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 12. `Add` a policy tag.
-![wlan13](img/wlan13.JPG)
+`+ Add` a policy tag __[22]__
+
+<br>
+
+![wlan13](img/wlan13.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 13. Set the Name and Description to `AP-WLANs`. Then, under WLAN-POLICY Maps, `Add` a mapping and set the WLAN Profile to `Wireless-#$34T#` with a Policy Profile `Wireless-POL`. Then, `Apply to Device`.
-![wlan14](img/wlan14.JPG)
+Set the Name __[23]__ and Description __[24]__ to `ap-wlans`  
+Then, under WLAN-POLICY Maps, 
+- `+ Add` a mapping __[25]__
+- Set the WLAN Profile to `wireless-#$34T#` __[26]__
+- With a Policy Profile `wireless-pol` __[27]__
+
+<br>
+
+Then, `Apply to Device` __[28]__
+
+<br>
+
+![wlan14](img/wlan14.png)
 
 &nbsp;
 ---
