@@ -143,12 +143,12 @@ While the VM is running, __double-click__ on either of the `three LANCards` __[0
 
 ### 6. Set the Network Adapters to the following:
 
-__[08]__
-| Network Adapter | Connection              | Network           |
-| ---             | ---                     | ---               |
-| Network Adapter | __NAT__                 | 208.8.8.0 /24     |
-| NetAdapter 2    | __Bridged (Replicate)__ | 10.#$34T#.1.0 /24 |
-| NetAdapter 3    | __VMNet3__              | 192.168.103.0 /24 |
+
+| [08] Network Adapter | Connection              | Network           |
+| ---                  | ---                     | ---               |
+| Network Adapter      | __NAT__                 | 208.8.8.0 /24     |
+| NetAdapter 2         | __Bridged (Replicate)__ | 10.#$34T#.1.0 /24 |
+| NetAdapter 3         | __VMNet3__              | 192.168.103.0 /24 |
 
 <br>
 
@@ -168,7 +168,7 @@ Confirm the changes by selecting __Ok__, then __Power On__ the Virtual Machine.
 ---
 &nbsp;
 
-### 6. Configure the C9800
+### 7. Configure the C9800
 ~~~
 conf t
  hostname C9800-WLC
@@ -202,9 +202,9 @@ conf t
   no shut
  int g2
   switchport
+  switchport mode trunk
   switchport trunk allowed vlan all
   switchport trunk native vlan 1
-  switchport mode trunk
  !
  !
  ip route 0.0.0.0 0.0.0.0 208.8.8.2
@@ -216,82 +216,123 @@ conf t
  ntp master 4
  ntp source vlan1
  end
+show ip int br
+!
 ~~~
 
 <br>
 <br>
 
-![06](img/06.JPG)
+![07](img/07.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 7. Access the GUI of C9800 by using the IP on its GigabitEthernet 1 interface https://208.8.8.7/ 
+### 8. Access the GUI
+Open the management interface IP `https://208.8.8.7/` on a browser __[10]__.  
+Ignore the the *Warning* and select `Advanced...` __[11]__, then `Accept the Risk and Continue` __[12]__
 
-![07](img/07.JPG)
-
-&nbsp;
----
-&nbsp;
-
-### 8. Login to the GUI
-
-> Username: admin  
-> Password: pass  
-
-<br>
-
-![08](img/08.JPG)
+![07](img/08.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 9. Configure the General Settings
-Make sure the Country is __US__, and the NTP server is the IP of __time.google.com__
+### 9. Login using the admin account
+
+> Username __[13]__ : admin  
+> Password __[14]__ : C1sc0123  
+
+Then, `Log In` __[15]__
 
 <br>
 
-![09](img/09.JPG)
-
-<br>
-
-
-![10](img/10.JPG)
-
-For __Wireless Management Settings__, set the management Port Number to __GigabitEthernet2__, which is where we Bridged the connection to the real switch.
-
-<br>
-
-Set the __Wireless Management VLAN__ to __1__
-
-<br>
-
-The __Wireless Management IP__ is __10.#$34T#.1.7__
-and the Subnet Mask as __255.255.255.0__
-
-Then __Next__
+![09](img/09.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 10. Setup a WLAN (Optional)
+### 10. Configure the General Settings
+- Set the hostname __[16]__ : `C9800-WLC`  
+- Time/Timezone __[17]__ : `UTC`
+- NTP Servers __[18]__ : `216.239.35.0`
 
-![11](img/11.JPG)
+> [!NOTE]
+> The NTP Server is the IP address of `time.google.com`
+> Make sure to add it into the list.
 
 <br>
 
-![12](img/12.JPG)
+Then, Scroll Down to Wireless Management Settings __[19]__
+
+<br>
+
+![010](img/010.png)
+
+<br>
+
+![11](img/11.png)
+
+<br>
+
+For __Wireless Management Settings__,
+- Set the management Port Number to __[20]__ : `GigabitEthernet2`  
+- Wireless Management VLAN __[21]__ : `VLAN 1`  
+- Wireless Management IP __[22]__ : `10.#$34T#.1.7`
+
+<br>
+
+Then, click `Next` __[23]__  
 
 &nbsp;
 ---
 &nbsp;
 
-### 10. Modify Self-Signed Certificates and AP-Group configs
+### 11. Wireless Network Settings
+`+ Add` __[24]__ a WLAN
 
-![13](img/13.JPG)
+![12](img/12.png)
+
+<br>
+
+![13](img/13.png)
+
+<br>
+
+Set the following settings:
+- Network Name* __[25]__ : `wireless-#$34T#`
+- Pre-Shared Key __[26]__ : `C1sc0123`
+
+<br>
+
+Then, `+Add` __[27]__
+
+&nbsp;
+---
+&nbsp;
+
+### 12. Advanced Settings
+Modify Self-Signed Certificates and AP-Group configs:
+- RSA Key-Size __[28]__ : `2048`  
+- Signature Algorithm : `sha256`
+- Password __[29]__ : `C1sc0123`
+
+<br>
+
+![14](img/14.png)
+
+<br>
+
+__Create New AP Management User__  
+- New AP Management User* __[30]__ : `admin`
+- Password* __[31]__ : `C1sc0123`
+- Secret* __[32]__ : `C1sc0123`
+
+<br>
+
+Finally, select `Summary` __[33]__
 
 &nbsp;
 ---
