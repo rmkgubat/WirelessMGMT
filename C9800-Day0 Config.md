@@ -2,9 +2,9 @@
 <!---   Your Monitor Number = #$34T#   --->  
 
 
-> IP Addresses:  
-> C9800-CL = 10.#$34T#.1.7
-> WinServer = 10.#$34T#.1.8
+> IP Addresses:    
+> C9800-CL = 10.#$34T#.1.7  
+> WinServer = 10.#$34T#.1.8  
 
 <br>
 <br>
