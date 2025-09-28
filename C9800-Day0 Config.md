@@ -338,27 +338,31 @@ Finally, select `Summary` __[33]__
 ---
 &nbsp;
 
-### 11. Verify configuration summary
+### 13. Verify configuration summary
 
-![14](img/14.JPG)
+![15](img/15.png)
 
 <br>
 
-Then Apply
+Select `Finish` __[34]__
 
-![15](img/15.JPG)
+![16](img/16.png)
+
+<br>
+
+Confirm the setup by selecting `Yes` __[35]__
 
 &nbsp;
 ---
 &nbsp;
 
-### 13. Redefine C9800 ports to access on G2
+### 14. Set C9800 ports to access on G2
 ~~~
 conf t
  int g2
-  switchport trunk native vlan 1
-  switchport trunk allowed vlan all
   switchport mode trunk
+  switchport trunk allowed vlan all
+  switchport trunk native vlan 1
   end
 ~~~
 
@@ -366,8 +370,7 @@ conf t
 ---
 &nbsp;
 
-### 12. Associate self-signed certificate for vwlc-ssc
-
+### 15. Set a self-signed certificate for the WLC
 ~~~
 conf t
  wireless management interface vlan 1       
@@ -377,14 +380,12 @@ wireless config vwlc-ssc key-size 2048 signature-algo sha256 password 0 C1sc0123
 
 <br>
 <br>
-<br>
-<br>
 
 ### Once the AP has been connected, it will automatically join the WLC.  
 
 <br>
 
-![wlan01](img/wlan01.JPG)
+![wlan01](img/wlan01.png)
 
 
 <br>
