@@ -485,6 +485,7 @@ Then `Update & Apply to Device` __[09]__
 ---
 &nbsp;
 
+### 4. Setup Policy Profile
 Now select the List View for `Policy Profile` __[10]__
 
 <br>
@@ -550,6 +551,7 @@ Next, select the List View icon for `Policy Tag` __[21]__
 ---
 &nbsp;
 
+### 5. Tag the WLAN profile with its corresponding policy profile
 `+ Add` a policy tag __[22]__
 
 <br>
@@ -568,7 +570,8 @@ Then, under WLAN-POLICY Maps,
 
 <br>
 
-Then, `Apply to Device` __[28]__
+Then, confirm the changes by selecting the `check` icon __[28]__   
+Finally, `Apply to Device` __[29]__  
 
 <br>
 
@@ -578,77 +581,140 @@ Then, `Apply to Device` __[28]__
 ---
 &nbsp;
 
-### 14. Confirm the changes and make sure AP-WLANs is now listed. Next, select the List View for `Flex Profile`
-![wlan15](img/wlan15.JPG)
+Confirm the changes and make sure ap-wlans is now listed.  
+Next, select the List View for `Flex Profile` __[30]__
+
+<br>
+
+![wlan15](img/wlan15.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 15. `Add` a flex profile.
-![wlan17](img/wlan17.JPG)
+### 6. Setup Flex Profile
+The 1815w Access point is configured for Flexconnect mode, which means we only need to configure the Flex Profile.
+
+<br>
+
+`+ Add` a flex profile __[31]__
+
+<br>
+
+![wlan16](img/wlan16.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 16. Set the Name and Description to `AP-Configs`. Then, select the VLAN tab.
-![wlan18](img/wlan18.JPG)
+Set the Name and Description to `ap-configs` __[32 & 33]__  
+Then, select the VLAN tab. __[34]__
+
+<br>
+
+![wlan17](img/wlan17.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 17. `Add` a VLAN, specifically `WIFIVLAN` with the same VLAN ID `10`. Then, `Save`.
-![wlan19](img/wlan19.JPG)
+`+ Add` a VLAN to the list __[35]__,  
+specifically `WIFIVLAN` __[36]__  
+with the same VLAN ID `10` __[37]__  
+
+<br>
+
+Then, `Save` __[38]__
+
+<br>
+
+![wlan18](img/wlan18.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 18. Then, `Apply to Device`.
-![wlan20](img/wlan20.JPG)
+Then, `Apply to Device` __[39]__
+
+<br>
+
+![wlan19](img/wlan19.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 19. Confirm the changes and make sure AP-Configs is now listed. Next, select the List View for `Site Tag`
-![wlan21](img/wlan21.JPG)
+Confirm the changes and make sure ap-configs is now listed.  
+Next, select the List View icon for `Site Tag` __[40]__  
+
+<br>
+
+![wlan20](img/wlan20.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 20. `Add` a site tag
-![wlan22](img/wlan22.JPG)
+### 7. Assign a configuration profile for any AP, either on local mode or flexconnect mode, that joins the WLC.
+`Add` a Site Tag __[40]__
+
+<br>
+
+![wlan21](img/wlan21.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 21. Set the Name and Description to `AP-Profiles`. Then, set the Flex Profile to `AP-Configs`. Finally, `Apply to Device`.
-![wlan23](img/wlan23.JPG)
+Set the Name and Description to `ap-profiles` __[42 & 43]__  
+Then, set the Flex Profile to `ap-configs` __[44]__  
+
+<br>
+
+Finally, `Apply to Device` __[45]__  
+
+<br>
+
+![wlan22](img/wlan22.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 22. Confirm the changes and make sure AP-Profiles is now listed. Next, select the List View for `Tag APs`
-![wlan24](img/wlan24.JPG)
+Confirm the changes and make sure ap-profiles is now listed. 
+Next, select the List View icon for `Tag APs` __[46]__
+
+<br>
+
+![wlan23](img/wlan23.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 23. Select the desired AP to be configured, then select `+Tag APs`
-![wlan25](img/wlan25.JPG)
+### 8. Assign the profiles to joined APs
+Check the desired AP to be configured with the WLANs __[47]__  
+Then, select `+ Tag APs` __[48]__  
+
+<br>
+
+![wlan24](img/wlan24.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 24. Assign the Policy with `AP-WLANs`, Site to `AP-Profiles`, RF to `default-rf-tag`
+Assign the following:
+- Policy: `wireless-pol` __[49]__
+- Site: `ap-profiles` __[50]__
+- RF: `default-rf-tag`
+
+<br>
+
+Finally, `Apply to Device` __[51]__
+
+<br>
+
 ![wlan26](img/wlan26.JPG)
 
 &nbsp;
