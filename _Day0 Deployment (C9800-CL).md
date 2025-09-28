@@ -449,46 +449,74 @@ Select the List View icon of `WLAN Profile` __[04]__
 <br>
 <br>
 
-Click on the existing WLAN, `Wireless-#$34T#` __[05]__
+Click on the existing WLAN, `wireless-#$34T#` __[05]__
 
 <br>
 
 ![wlan05](img/wlan05.png)
 
-&nbsp;
----
-&nbsp;
+<br>
+<br>
 
-### 5. Make sure `6GHz is disabled` then select `Security`
-![wlan06](img/wlan06.JPG)
+Make sure `6GHz is disabled` __[06]__ then select `Security` __[07]__  
 
-&nbsp;
----
-&nbsp;
+<br>
 
-### 6. Set the Auth Key Mgmt (AKM) to `PSK` and `PSK-SHA256` with a Pre-Shared Key `C1sc0123`. Then `Update & Apply to Device`
-![wlan07](img/wlan07.JPG)
+![wlan06](img/wlan06.png)
 
-&nbsp;
----
-&nbsp;
+<br>
+<br>
 
-### 7. Now select the List View for Policy Profile. Then `Add` a policy.
-![wlan08](img/wlan08.JPG)
+Set the Auth Key Mgmt (AKM) to `PSK` and `PSK-SHA256` __[08]__  
+with a Pre-Shared Key `C1sc0123`
 
-&nbsp;
----
-&nbsp;
+<br>
 
-### 8. `Enable` the status of the policy, then add the following Name & Description `Wireless-POL`. Then select `Access Policies`.
-![wlan09](img/wlan09.JPG)
+Then `Update & Apply to Device` __[09]__
 
-&nbsp;
----
-&nbsp;
+<br>
 
-### 9. Under `Access Policies`, set the VLAN for the clients joining the WLAN to VLAN 10, `WIFIVLAN`. Then select `Advanced`.
-![wlan10](img/wlan10.JPG)
+![wlan07](img/wlan07.png)
+
+<br>
+<br>
+
+Now select the List View for `Policy Profile` __[10]__
+
+<br>
+
+Then `+ Add` a policy __[11]__
+
+<br>
+
+![wlan08](img/wlan08.png)
+
+<br>
+<br>
+
+Set the Name* __[12]__ and Description __[13]__ to `wireless-pol`  
+then, `Enable` the status of the policy __[14]__  
+
+<br>
+
+Then, select `Access Policies` __[15]__
+
+<br>
+
+![wlan09](img/wlan09.png)
+
+<br>
+<br>
+
+Under Access Policies, set the VLAN/VLAN Group __[16]__ for the clients to VLAN 10, `WIFIVLAN` __[17]__  
+
+<br>
+
+Then select `Advanced` __[18]__
+
+<br>
+
+![wlan10](img/wlan10.png)
 
 &nbsp;
 ---
