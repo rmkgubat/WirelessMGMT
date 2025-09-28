@@ -385,7 +385,7 @@ wireless config vwlc-ssc key-size 2048 signature-algo sha256 password 0 C1sc0123
 
 <br>
 
-![wlan01](img/wlan01.png)
+![wlan00](img/wlan00.JPG)
 
 
 <br>
