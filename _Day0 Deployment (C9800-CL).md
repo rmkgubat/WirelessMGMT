@@ -394,30 +394,37 @@ wireless config vwlc-ssc key-size 2048 signature-algo sha256 password 0 C1sc0123
 ---
 &nbsp;
 
-## Exercise 01: Troubleshoot `Wireless-#$34T#` wifi so that it becomes operable in the network.
+## Exercise 01: Configure `Wireless-#$34T#` so that client traffic belongs to VLAN 10.
+### 1. Access the Wireless Advanced Setup Page.
+Go to `Configuration` __[01]__ > Under Wireless Setup, select `Advanced` __[02]__
+![wlan01](img/wlan01.png)
 
-### 1. Go to `Configuration` > Under Wireless Setup, select `Advanced`
-![wlan02](img/wlan02.JPG)
+<br>
 
-&nbsp;
----
-&nbsp;
-
-### 2. View the Wireless Setup Flow Overview then, when ready, select `Start Now`
-![wlan03](img/wlan03.JPG)
+![wlan02](img/wlan02.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 3. Under the pipeline, Tags & Profiles, select the List View of `WLAN Profile`
-![wlan04](img/wlan04.JPG)
+### 2. Wireless Setup Flow Overview
+When ready, select, `Start Now` __[03]__
+
+![wlan03](img/wlan03.png)
 
 &nbsp;
 ---
 &nbsp;
 
-### 4. Select the existing WLAN, `Wireless-91`
+### 3. Setup WLAN Profile
+Select the List View icon of `WLAN Profile` __[04]__
+
+![wlan04](img/wlan04.png)
+
+<br>
+
+Click on the existing WLAN, `Wireless-#$34T#` __[05]__
+
 ![wlan05](img/wlan05.JPG)
 
 &nbsp;
