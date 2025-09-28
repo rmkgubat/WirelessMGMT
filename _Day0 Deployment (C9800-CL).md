@@ -97,6 +97,8 @@ conf t
 ### 1. Deploy the Wireless Controller.
 Open the VM `C9800-CL-universalk9_vga.17.15.03.ovf` __[01]__
 
+<br>
+
 ![01](img/01.png)
 
 &nbsp;
@@ -106,6 +108,8 @@ Open the VM `C9800-CL-universalk9_vga.17.15.03.ovf` __[01]__
 ### 2. Assign a name for the VM
 In this guide, we use `C9800_WLC` __[02]__  
 Then, click `Next` __[03]__
+
+<br>
 
 ![02](img/02.png)
 
@@ -117,6 +121,8 @@ Then, click `Next` __[03]__
 Specify the deployment size to `100 APs, 1k Clients` __[04]__  
 Then, click `Next` __[05]__
 
+<br>
+
 ![03](img/03.png)
 
 &nbsp;
@@ -125,6 +131,8 @@ Then, click `Next` __[05]__
 
 ### 4. Properties
 Leave everything as default and simply `Import` __[06]__
+
+<br>
 
 ![04](img/04.png)
 
@@ -135,6 +143,8 @@ Leave everything as default and simply `Import` __[06]__
 ### 5. Network Adapters
 While the VM is running, __double-click__ on either of the `three LANCards` __[07]__
 
+<br>
+
 ![05](img/05.png)
 
 &nbsp;
@@ -142,7 +152,6 @@ While the VM is running, __double-click__ on either of the `three LANCards` __[0
 &nbsp;
 
 ### 6. Set the Network Adapters to the following:
-
 
 | [08] Network Adapter | Connection              | Network           |
 | ---                  | ---                     | ---               |
@@ -231,7 +240,9 @@ show ip int br
 
 ### 8. Access the GUI
 Open the management interface IP `https://208.8.8.7/` on a browser __[10]__.  
-Ignore the the *Warning* and select `Advanced...` __[11]__, then `Accept the Risk and Continue` __[12]__
+Ignore the the *Warning* and select `Advanced...` __[11]__, then `Accept the Risk and Continue` __[12]__  
+
+<br>
 
 ![07](img/08.png)
 
@@ -240,11 +251,12 @@ Ignore the the *Warning* and select `Advanced...` __[11]__, then `Accept the Ris
 &nbsp;
 
 ### 9. Login using the admin account
-
 > Username __[13]__ : admin  
 > Password __[14]__ : C1sc0123  
 
-Then, `Log In` __[15]__
+<br>
+
+Then, `Log In` __[15]__  
 
 <br>
 
@@ -256,16 +268,18 @@ Then, `Log In` __[15]__
 
 ### 10. Configure the General Settings
 - Set the hostname __[16]__ : `C9800-WLC`  
-- Time/Timezone __[17]__ : `UTC`
-- NTP Servers __[18]__ : `216.239.35.0`
-
-> [!NOTE]
-> The NTP Server is the IP address of `time.google.com`
-> Make sure to add it into the list.
+- Time/Timezone __[17]__ : `UTC`  
+- NTP Servers __[18]__ : `216.239.35.0`  
 
 <br>
 
-Then, Scroll Down to Wireless Management Settings __[19]__
+> [!NOTE]
+> The NTP Server is the IP address of `time.google.com`  
+> Make sure to add it into the list.  
+
+<br>
+
+Then, Scroll Down to Wireless Management Settings __[19]__  
 
 <br>
 
@@ -277,10 +291,10 @@ Then, Scroll Down to Wireless Management Settings __[19]__
 
 <br>
 
-For __Wireless Management Settings__,
+For __Wireless Management Settings__,  
 - Set the management Port Number to __[20]__ : `GigabitEthernet2`  
 - Wireless Management VLAN __[21]__ : `VLAN 1`  
-- Wireless Management IP __[22]__ : `10.#$34T#.1.7`
+- Wireless Management IP __[22]__ : `10.#$34T#.1.7`  
 
 <br>
 
@@ -291,7 +305,9 @@ Then, click `Next` __[23]__
 &nbsp;
 
 ### 11. Wireless Network Settings
-`+ Add` __[24]__ a WLAN
+`+ Add` __[24]__ a WLAN  
+
+<br>
 
 ![12](img/12.png)
 
@@ -301,9 +317,9 @@ Then, click `Next` __[23]__
 
 <br>
 
-Set the following settings:
-- Network Name* __[25]__ : `wireless-#$34T#`
-- Pre-Shared Key __[26]__ : `C1sc0123`
+Set the following settings:  
+- Network Name* __[25]__ : `wireless-#$34T#`  
+- Pre-Shared Key __[26]__ : `C1sc0123`  
 
 <br>
 
@@ -314,10 +330,10 @@ Then, `+Add` __[27]__
 &nbsp;
 
 ### 12. Advanced Settings
-Modify Self-Signed Certificates and AP-Group configs:
+Modify Self-Signed Certificates and AP-Group configs:  
 - RSA Key-Size __[28]__ : `2048`  
-- Signature Algorithm : `sha256`
-- Password __[29]__ : `C1sc0123`
+- Signature Algorithm : `sha256`  
+- Password __[29]__ : `C1sc0123`  
 
 <br>
 
@@ -326,9 +342,9 @@ Modify Self-Signed Certificates and AP-Group configs:
 <br>
 
 __Create New AP Management User__  
-- New AP Management User* __[30]__ : `admin`
-- Password* __[31]__ : `C1sc0123`
-- Secret* __[32]__ : `C1sc0123`
+- New AP Management User* __[30]__ : `admin`  
+- Password* __[31]__ : `C1sc0123`  
+- Secret* __[32]__ : `C1sc0123`  
 
 <br>
 
@@ -344,7 +360,9 @@ Finally, select `Summary` __[33]__
 
 <br>
 
-Select `Finish` __[34]__
+Select `Finish` __[34]__  
+
+<br>
 
 ![16](img/16.png)
 
@@ -396,7 +414,10 @@ wireless config vwlc-ssc key-size 2048 signature-algo sha256 password 0 C1sc0123
 
 ## Exercise 01: Configure `Wireless-#$34T#` so that client traffic belongs to VLAN 10.
 ### 1. Access the Wireless Advanced Setup Page.
-Go to `Configuration` __[01]__ > Under Wireless Setup, select `Advanced` __[02]__
+Go to `Configuration` __[01]__ > Under Wireless Setup, select `Advanced` __[02]__  
+
+<br>
+
 ![wlan01](img/wlan01.png)
 
 <br>
@@ -410,6 +431,8 @@ Go to `Configuration` __[01]__ > Under Wireless Setup, select `Advanced` __[02]_
 ### 2. Wireless Setup Flow Overview
 When ready, select, `Start Now` __[03]__
 
+<br>
+
 ![wlan03](img/wlan03.png)
 
 &nbsp;
@@ -419,13 +442,18 @@ When ready, select, `Start Now` __[03]__
 ### 3. Setup WLAN Profile
 Select the List View icon of `WLAN Profile` __[04]__
 
+<br>
+
 ![wlan04](img/wlan04.png)
 
+<br>
 <br>
 
 Click on the existing WLAN, `Wireless-#$34T#` __[05]__
 
-![wlan05](img/wlan05.JPG)
+<br>
+
+![wlan05](img/wlan05.png)
 
 &nbsp;
 ---
