@@ -32,7 +32,7 @@ On the browser, go to `Management` > `Software Update`
 
 <br>
 
-[updateAP]("img/updateAP.JPG")
+![updateAP]("img/updateAP.JPG")
 
 &nbsp;
 ---
