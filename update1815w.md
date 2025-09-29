@@ -30,6 +30,10 @@ After specifying your chosen initial configurations, wait for the AP to reboot a
 Once the 1815w reboots and obtains an IP from the DHCP server, access the GUI on a browser.  
 On the browser, go to `Management` > `Software Update`
 
+<br>
+
+[updateAP]("img/updateAP.JPG")
+
 &nbsp;
 ---
 &nbsp;
