@@ -1,6 +1,10 @@
 
 ## If the 1815w is ME (Mobility Express) 
-### 1. Reset WLC through the `Recover-Config` command.
+### 1. Hard Reset
+Reset 1815w through the `Recover-Config` command.  
+
+<br>
+
 When the Controller boots, make sure to enter `Recover-Config` on the User: prompt  
 Wait for the ME to reboot and enter initial setup.
 
@@ -10,7 +14,6 @@ Wait for the ME to reboot and enter initial setup.
 
 ### 2. Initial Setup.
 Answer the prompts provided by the AP.  
-
 After specifying your chosen initial configurations, wait for the AP to reboot again.
 
 > [!NOTE]
@@ -23,17 +26,24 @@ After specifying your chosen initial configurations, wait for the AP to reboot a
 ---
 &nbsp;
 
-### 3. On the browser, go to `Management` > `Software Update`
+### 3. Access the GUI
+Once the 1815w reboots and obtains an IP from the DHCP server, access the GUI on a browser.  
+On the browser, go to `Management` > `Software Update`
 
 &nbsp;
 ---
 &nbsp;
 
-### 4. Upload the `C9800-AP-universalk9.16.12.08` via TFTP
-Enable TFTP on the PC using TFTP Server App.  
+### 4. Upload the updated image
+Upload the image, `C9800-AP-universalk9.16.12.08` via TFTP
+Enable TFTP on the PC using any TFTP Server App.  
 
 > [!NOTE]
 > Make sure a proper source directory and IP binding is defined for the TFTP Server.
+
+<br>
+
+Now, simply wait for the AP to update and reboot.
 
 &nbsp;
 ---
