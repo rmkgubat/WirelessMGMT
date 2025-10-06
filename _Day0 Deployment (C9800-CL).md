@@ -771,7 +771,7 @@ conf t
   network 10.#$34T#.11.0 255.255.255.192
   default-router 10.#$34T#.11.4
   domain-name SOC-GROUP.COM
-  dns-server 10.#$34T#.1.10
+  dns-server 10.#$34T#.1.8
   end
 ~~~
 	
@@ -824,7 +824,7 @@ conf t
   network 10.#$34T#.12.0 255.255.255.224
   default-router 10.#$34T#.12.4
   domain-name NOC-GROUP.COM
-  dns-server 10.#$34T#.1.10
+  dns-server 10.#$34T#.1.8
   end
 ~~~
 	
