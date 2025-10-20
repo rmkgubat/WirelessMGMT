@@ -1,10 +1,10 @@
 
-<!---   Your Monitor Number = #$34T#   --->  
+<!---   Your Monitor Number = 12   --->  
 
 
 > IP Addresses:    
-> C9800-CL = 10.#$34T#.1.7  
-> WinServer = 10.#$34T#.1.8  
+> C9800-CL = 10.12.1.7  
+> WinServer = 10.12.1.8  
 
 <br>
 <br>
@@ -20,7 +20,7 @@
 ~~~
 !@CSwitch
 conf t
- hostname CoreBABA-#$34T#
+ hostname CoreBABA-12
  enable secret pass
  service password-encryption
  no logging console
@@ -52,10 +52,10 @@ conf t
   name VOIPVLAN
   exit
  int vlan 1
-  ip add 10.#$34T#.1.4 255.255.255.0
+  ip add 10.12.1.4 255.255.255.0
   no shut
  int vlan 10
-  ip add 10.#$34T#.10.4 255.255.255.0
+  ip add 10.12.10.4 255.255.255.0
   no shut
  !
  !
@@ -70,19 +70,19 @@ conf t
  ip routing
  !
  !
- ip dhcp excluded-address 10.#$34T#.1.1 10.#$34T#.1.100
- ip dhcp excluded-address 10.#$34T#.10.1 10.#$34T#.10.100
- ip dhcp pool POOLDATA
-  network 10.#$34T#.1.0 255.255.255.0
-  default-router 10.#$34T#.1.4
-  dns-server 10.#$34T#.1.10
+ ip dhcp excluded-address 10.12.1.1 10.12.1.100
+ ip dhcp excluded-address 10.12.10.1 10.12.10.100
+ ip dhcp pool MGMTDATA
+  network 10.12.1.0 255.255.255.0
+  default-router 10.12.1.4
+  dns-server 10.12.1.10
   domain-name MGMTDATA.COM
- ip dhcp pool POOLWIFI
-  network 10.#$34T#.10.0 255.255.255.0
-  default-router 10.#$34T#.10.4
-  dns-server 10.#$34T#.1.8
+ ip dhcp pool WIFIDATA
+  network 10.12.10.0 255.255.255.0
+  default-router 10.12.10.4
+  dns-server 10.12.1.8
   domain-name WIFIDATA.COM 
-  option 43 ip 10.#$34T#.1.7
+  option 43 ip 10.12.1.7
   end
 ~~~
 
@@ -156,7 +156,7 @@ While the VM is running, __double-click__ on either of the `three LANCards` __[0
 | [08] Network Adapter | Connection              | Network           |
 | ---                  | ---                     | ---               |
 | Network Adapter      | __NAT__                 | 208.8.8.0 /24     |
-| NetAdapter 2         | __Bridged (Replicate)__ | 10.#$34T#.1.0 /24 |
+| NetAdapter 2         | __Bridged (Replicate)__ | 10.12.1.0 /24 |
 | NetAdapter 3         | __VMNet3__              | 192.168.103.0 /24 |
 
 <br>
@@ -203,7 +203,7 @@ conf t
   name WIFIVLAN
   exit
  int vlan 1
-  ip add 10.#$34T#.1.7 255.255.255.0
+  ip add 10.12.1.7 255.255.255.0
   no shut
  int g1
   no switchport
@@ -217,8 +217,8 @@ conf t
  !
  !
  ip route 0.0.0.0 0.0.0.0 208.8.8.2
- ip route 10.0.0.0 255.0.0.0 10.#$34T#.1.4
- ip route 200.0.0.0 255.255.255.0 10.#$34T#.1.4
+ ip route 10.0.0.0 255.0.0.0 10.12.1.4
+ ip route 200.0.0.0 255.255.255.0 10.12.1.4
  !
  !
  ntp server 216.239.35.12
@@ -294,7 +294,7 @@ Then, Scroll Down to Wireless Management Settings __[19]__
 For __Wireless Management Settings__,  
 - Set the management Port Number to __[20]__ : `GigabitEthernet2`  
 - Wireless Management VLAN __[21]__ : `VLAN 1`  
-- Wireless Management IP __[22]__ : `10.#$34T#.1.7`  
+- Wireless Management IP __[22]__ : `10.12.1.7`  
 
 <br>
 
@@ -318,7 +318,7 @@ Then, click `Next` __[23]__
 <br>
 
 Set the following settings:  
-- Network Name* __[25]__ : `wireless-#$34T#`  
+- Network Name* __[25]__ : `wireless-12`  
 - Pre-Shared Key __[26]__ : `C1sc0123`  
 
 <br>
@@ -412,7 +412,7 @@ wireless config vwlc-ssc key-size 2048 signature-algo sha256 password 0 C1sc0123
 ---
 &nbsp;
 
-## Exercise 01: Configure `Wireless-#$34T#` so that client traffic belongs to VLAN 10.
+## Exercise 01: Configure `Wireless-12` so that client traffic belongs to VLAN 10.
 ### 1. Access the Wireless Advanced Setup Page.
 Go to `Configuration` __[01]__ > Under Wireless Setup, select `Advanced` __[02]__  
 
@@ -450,7 +450,7 @@ Select the List View icon of `WLAN Profile` __[04]__
 ---
 &nbsp;
 
-Click on the existing WLAN, `wireless-#$34T#` __[05]__
+Click on the existing WLAN, `wireless-12` __[05]__
 
 <br>
 
@@ -529,7 +529,7 @@ Then select `Advanced` __[18]__
 ---
 &nbsp;
 
-Assign the DHCP server for the WLAN, `10.#$34T#.10.4` __[19]__
+Assign the DHCP server for the WLAN, `10.12.10.4` __[19]__
 finally `Apply to Device` __[20]__
 
 <br>
@@ -565,7 +565,7 @@ Next, select the List View icon for `Policy Tag` __[21]__
 Set the Name __[23]__ and Description __[24]__ to `ap-wlans`  
 Then, under WLAN-POLICY Maps, 
 - `+ Add` a mapping __[25]__
-- Set the WLAN Profile to `wireless-#$34T#` __[26]__
+- Set the WLAN Profile to `wireless-12` __[26]__
 - With a Policy Profile `wireless-pol` __[27]__
 
 <br>
@@ -731,7 +731,7 @@ Finally, `Apply to Device` __[51]__
 &nbsp;
 
 ### Exercise 01: Design and implement a network for SOC-GROUP with a maximum of 45 users.
-- Use the available network address 10.#$34T#.11.0/24  
+- Use the available network address 10.12.11.0/24  
 - Reserve the first 10 IPs  
 - Use VLAN 11 for the network.  
 - Make sure clients can connect from both wired, and wireless devices.  
@@ -745,12 +745,12 @@ Finally, `Apply to Device` __[51]__
 C: 45 users = 6 bits  
 S: 32 - 6 = /26 (4th, 64i)  
 I:  
-  - 10.#$34T#.11.0 255.255.255.192  
-  - 10.#$34T#.11.64 255.255.255.192   
+  - 10.12.11.0 255.255.255.192  
+  - 10.12.11.64 255.255.255.192   
 
 <br>
 
-__NETWORK ADDRESS: `10.#$34T#.11.0 255.255.255.192`__  
+__NETWORK ADDRESS: `10.12.11.0 255.255.255.192`__  
 
 <br>
 
@@ -762,16 +762,16 @@ conf t
   exit
  int vlan 11
   description SOC-GROUP
-  ip add 10.#$34T#.11.4 255.255.255.192
+  ip add 10.12.11.4 255.255.255.192
   ip ospf 1 area 0
   no shut
  !
- ip dhcp excluded-address 10.#$34T#.11.1 10.#$34T#.11.10
+ ip dhcp excluded-address 10.12.11.1 10.12.11.10
  ip dhcp pool SOC-GROUP
-  network 10.#$34T#.11.0 255.255.255.192
-  default-router 10.#$34T#.11.4
+  network 10.12.11.0 255.255.255.192
+  default-router 10.12.11.4
   domain-name SOC-GROUP.COM
-  dns-server 10.#$34T#.1.8
+  dns-server 10.12.1.8
   end
 ~~~
 	
@@ -784,7 +784,7 @@ conf t
 &nbsp;
 
 ### Exercise 02: Design and implement a network for NOC-GROUP with a maximum of 27 users.
-- Use the available network address 10.#$34T#.12.0/24  
+- Use the available network address 10.12.12.0/24  
 - Reserve the first 10 IPs  
 - Use VLAN 12 for the network.  
 - Make sure clients can connect from both wired, and wireless devices.  
@@ -798,12 +798,12 @@ conf t
 C: 27 users = 5 bits  
 S: 32 - 5 = /27 (4th, 32i)  
 I:  
-  - 10.#$34T#.12.0 255.255.255.224  
-  - 10.#$34T#.12.32 255.255.255.224  
+  - 10.12.12.0 255.255.255.224  
+  - 10.12.12.32 255.255.255.224  
 
 <br>
 
-__NETWORK ADDRESS: `10.#$34T#.12.0 255.255.255.224`__  
+__NETWORK ADDRESS: `10.12.12.0 255.255.255.224`__  
 
 <br>
 
@@ -815,16 +815,16 @@ conf t
   exit
  int vlan 11
   description NOC-GROUP
-  ip add 10.#$34T#.12.4 255.255.255.224
+  ip add 10.12.12.4 255.255.255.224
   ip ospf 1 area 0
   no shut
  !
- ip dhcp excluded-address 10.#$34T#.12.1 10.#$34T#.12.10
+ ip dhcp excluded-address 10.12.12.1 10.12.12.10
  ip dhcp pool NOC-GROUP
-  network 10.#$34T#.12.0 255.255.255.224
-  default-router 10.#$34T#.12.4
+  network 10.12.12.0 255.255.255.224
+  default-router 10.12.12.4
   domain-name NOC-GROUP.COM
-  dns-server 10.#$34T#.1.8
+  dns-server 10.12.1.8
   end
 ~~~
 	
